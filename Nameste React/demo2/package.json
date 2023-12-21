@@ -1,0 +1,21 @@
+{
+  "name": "demo2",
+  "version": "1.0.0",
+  "description": "Nameste react day 3",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "Ankit Poonia",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  }
+}

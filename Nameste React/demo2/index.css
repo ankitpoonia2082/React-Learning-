@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+}
+*{
+    color: #fff;
+}
+
+.navbar{
+    background-color:chocolate;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+.navbar img{
+    width: 60px;
+}
+.navbar >ul{
+    display: flex;
+}
+.navbar >ul>li{
+    list-style: none;
+    padding: 10px;
+}

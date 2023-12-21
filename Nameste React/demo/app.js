@@ -10,9 +10,9 @@ import ReactDOM from "react-dom/client";
  * 
  */
 
-const heading1 = React.createElement('h1',{id:"heading1"},"Heading 1")
-const heading2 = React.createElement('h1',{id:"heading2"},"Heading 2")
-const heading3 = React.createElement('h1',{id:"heading3"},"Heading 3")
+const heading1 = React.createElement('h1',{id:"heading1",key:"heading1"},"Heading 1")
+const heading2 = React.createElement('h2',{id:"heading2",key:"heading2"},"Heading 2")
+const heading3 = React.createElement('h3',{id:"heading3",key:"heading3"},"Heading 3")
 const container = React.createElement('div',{id:"container"},[heading1,heading2,heading3])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
