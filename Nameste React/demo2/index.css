@@ -1,6 +1,11 @@
-
+body{
+    background-color: black;
+}
+*{
+    color:#fff;
+}
 .navbar{
-    background-color:rgb(157, 11, 40);
+    background-color:rgb(191, 14, 49);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,12 +15,12 @@
 .logo img{
     width: 60px;
     border-radius: 40px;
-
 }
-.navbar >ul{
+.Links >ul{
+    list-style: none;
     display: flex;
 }
-.navbar >ul>li{
+.Links >ul>li{
     list-style: none;
     padding: 10px;
 }
@@ -27,18 +32,52 @@
     justify-content: center;
     align-items: center;
 }
+/* ----------RestroCard Css-------------- */
 
 .card {
     width: 250px;
     height: 350px;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 13px;
     padding: 10px;
     margin: 6px;
     text-align: center;
 }
+.card:hover{
+    background-color: rgb(35, 35, 35);
+}
+
 .card > img{
     object-fit:cover;
+    border-radius: 13px;
     width: 100%;
     height: 150px;
+}
+/* ----------Search Box Css-------------- */
+
+.searchBox{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.searchBox input{
+    color: black;
+    border: none;
+    width: 500px;
+    padding: 10px;
+    border-radius: 30px 0px 0px 30px;
+}
+.searchBox button{
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 0px 30px 30px 0px;
+}
+/* ----------Footer Css-------------- */
+.footer_heading{
+    text-align: center;
+    padding: 10px;
+    border-radius: 13px;
+    background-color: darksalmon;
 }
