@@ -50,7 +50,6 @@ const Body = () => {
 
 
             </div>
-
             {/* Displaying Cards */}
             {(!allRestro.length) ? <Shimmer /> : (
                 <div className="body-div">

@@ -1,5 +1,9 @@
 body{
     background-color: black;
+
+}
+a{
+    text-decoration: none;
 }
 *{
     color:#fff;
@@ -24,6 +28,14 @@ body{
     list-style: none;
     padding: 10px;
 }
+.btnLogin{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(84, 138, 84);
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
 
 .body-div{
     margin: 20px;
@@ -36,16 +48,14 @@ body{
 
 .card {
     width: 250px;
+    background-color: rgb(35, 35, 35);
     height: 350px;
-    border: 1px solid rgb(255, 255, 255);
     border-radius: 13px;
     padding: 10px;
-    margin: 6px;
+    margin: 10px;
     text-align: center;
 }
-.card:hover{
-    background-color: rgb(35, 35, 35);
-}
+
 
 .card > img{
     object-fit:cover;
@@ -57,7 +67,7 @@ body{
 
 .searchBox{
     display: flex;
-    margin: 10px;
+    margin: 30px 10px;
     justify-content: center;
     align-items: center;
 }

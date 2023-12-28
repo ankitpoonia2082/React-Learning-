@@ -2,7 +2,6 @@ import { useParams } from "react-router"
 import { useEffect, useState } from "react";
 import { img_url_CDN } from "../contents";
 import Shimmer from "./Shimmer";
-import RestaurantCard from "./card";
 
 
 const RestroMenu = () => {
@@ -44,19 +43,18 @@ const RestroMenu = () => {
                 <h1>MENU</h1>
                 <div className="menuCard">
                     {
-                        menu.map((item) => (
+                        menu?.map((item) => (
                             <div className="menuItem">
                                 <img src={img_url_CDN+item.card?.info?.imageId}></img>
                                 <h4>{item.card?.info?.name}</h4>
-                                <p>{item.card?.info?.category}</p>
+                                <p >{item.card?.info?.category}</p>
                                 <p key={item.card?.info?.id}>Price: ₹{item.card?.info?.price}</p>
                             </div>
-
-                        ))}
+                        ))};
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 

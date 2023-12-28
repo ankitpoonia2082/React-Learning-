@@ -18,12 +18,20 @@ const Links = () => (
         </ul>
     </div>
 )
+const LoginLogout = ()=>(
+    <div className='loginBtn'>
+        <button className='btnLogin'>Login</button>
+    </div>
+)
+    
+
 
 // Navbar is a Functional Component--->
 const Header = () => (
     <div className="navbar">
         {logo()}
         {Links()}
+        {LoginLogout()}
     </div>
 )
 
