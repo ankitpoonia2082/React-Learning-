@@ -1,5 +1,5 @@
 // -------------------------------HEADER-----------------------------------
-
+import {Link} from 'react-router-dom';
 // logo
 const logo = () => (
     <a className="logo">
@@ -11,9 +11,9 @@ const logo = () => (
 const Links = () => (
     <div className="Links">
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><Link to={"/"}>Home</Link></li>
+            <li><Link to={"/about"}>About</Link></li>
+            <li><Link to={"/contact"}>Contact</Link></li>
             <li>Cart</li>
         </ul>
     </div>

@@ -1,6 +1,7 @@
 import RestaurantCard from "./card";
 import { useState, useEffect } from "react";
 import Shimmer, { NoRestro } from "./Shimmer"
+import { Link } from "react-router-dom";
 
 // Restraut searching 
 const FilterData = (searchValue, allRestro) => {
@@ -22,10 +23,10 @@ const Body = () => {
     // Getting Data from Swigi Api...
     async function getSwigiData() {
         try {
-            const data = await fetch(`https://www.swiggy.com/mapi/homepage/getCards?lat=29.1491875&lng=75.7216527`);
+            const data = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.1491875&lng=75.7216527&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
             const json = await data.json();
-            setAllRestro(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-            setFilteredRestrauts(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+            setAllRestro(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setFilteredRestrauts(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         }
         catch {
             console.log("Failed to fetch")
@@ -34,7 +35,6 @@ const Body = () => {
 
     return (
         <div className="App_body">
-
             <div className="searchBox">
                 <input type="text" className="input-Search"
                     value={searchValue}
@@ -52,11 +52,11 @@ const Body = () => {
             </div>
 
             {/* Displaying Cards */}
-            {!allRestro.length ? <Shimmer /> : (
+            {(!allRestro.length) ? <Shimmer /> : (
                 <div className="body-div">
                     {
                         filteredRestrauts.length === 0 ? <NoRestro /> : filteredRestrauts.map(restrautList => {
-                            return (<RestaurantCard {...restrautList.info} key={restrautList.info.id} />)
+                            return (<Link to={`/restroMenu/`+restrautList.info.id} key={restrautList.info.id}><RestaurantCard {...restrautList.info}/></Link>)
                         })
                     }
                     

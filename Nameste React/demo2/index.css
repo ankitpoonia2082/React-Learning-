@@ -82,25 +82,74 @@ body{
     background-color: darksalmon;
 }
 
-.shimmerCard{
+.shimmer{
     margin: 30px;
-    width: 250px;
-    height: 330px;
-    background-color: rgb(60, 57, 57);
-    border-radius: 13px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.shimmerCard > div{
-    margin: 10px;
+.shimmerCard{
+    margin: 20px;
+    width: 250px;
+    height: 330px;
     border-radius: 13px;
     background-color: rgb(46, 43, 43);
-    width: 100%;
-    height: 150px;
 }
 
 .notFound{
     background-color: rgb(204, 204, 131);
     color: black;
+}
+
+.errorPage {
+    text-align: center;
+}
+.errorPage > h3{
+    color: #e33746;
+}
+
+.restroDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.restroInfo{
+    margin: 30px;
+    text-align: center;
+}
+
+.restroInfo > img{
+    width: 300px;
+    height: 300px;
+    border-radius: 13px;
+}
+
+.menu{
+    text-align: center;
+    padding: 10px;
+    border: 1px solid gray;
+}
+.menuCard{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuItem{
+    width: 200px;
+    height: 350px;
+    padding: 10px;
+    margin: 20px;
+    background-color: rgb(41, 41, 41);
+}
+.menuItem > img{
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    height: 50%;
 }
