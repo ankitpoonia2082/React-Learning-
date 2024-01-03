@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+
+
 body{
     background-color: black;
 
@@ -7,6 +12,7 @@ a{
 }
 *{
     color:#fff;
+    font-family: 'Quicksand', sans-serif;
 }
 .navbar{
     background-color:#e33746;
@@ -96,6 +102,8 @@ a{
     margin: 30px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .shimmerCard{
@@ -107,7 +115,6 @@ a{
 }
 
 .notFound{
-    background-color: rgb(204, 204, 131);
     color: black;
 }
 
@@ -142,8 +149,6 @@ a{
     border: 1px solid gray;
 }
 .menuCard{
-    margin: 20px;
-    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -155,11 +160,10 @@ a{
     height: 350px;
     padding: 10px;
     margin: 20px;
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(30, 30, 30);
 }
 .menuItem > img{
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 5px;
     height: 50%;
+    border-radius: 8px;
 }

@@ -11,8 +11,14 @@ const Shimmer = () => {
 
 export const NoRestro = () => {
     return (<div className="notFound">
-        <h1>No restraut Found</h1>
+        <h1>❕ No restraut Found</h1>
     </div>)
 };
+
+export const Offline = ()=>{
+    return(
+        <h2>⭕️ You are Offline , Check your internet connection and try again...</h2>
+    )
+}
 
 export default Shimmer;

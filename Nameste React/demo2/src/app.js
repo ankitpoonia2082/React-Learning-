@@ -1,14 +1,15 @@
-import React from "react";
+import React ,{lazy,Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import AppBody from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import RestroMenu from "./components/RestroMenu";
 import Error from './components/Error';
 import {createBrowserRouter , RouterProvider, Outlet} from "react-router-dom"
 import Body from "./components/Body";
+
+const InstaMart = lazy(()=> import('./components/InstaMart'));
 
 
 // <></> This is react fregment (used were there can be only one parent )
@@ -44,6 +45,11 @@ const route = createBrowserRouter([
             {
                 path:`/restroMenu/:id`,
                 element:<RestroMenu/>,
+                errorElement:<Error/>
+            },
+            {
+                path:`/instaMart`,
+                element:<Suspense><InstaMart/></Suspense>,
                 errorElement:<Error/>
             }
         ]

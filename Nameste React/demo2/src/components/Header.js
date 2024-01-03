@@ -1,5 +1,6 @@
 // -------------------------------HEADER-----------------------------------
 import {Link} from 'react-router-dom';
+import useOnline from './utils/useOnline'
 // logo
 const logo = () => (
     <a className="logo">
@@ -14,6 +15,7 @@ const Links = () => (
             <li><Link to={"/"}>Home</Link></li>
             <li><Link to={"/about"}>About</Link></li>
             <li><Link to={"/contact"}>Contact</Link></li>
+            <li><Link to={"/instaMart"}>InstaMart</Link></li>
             <li>Cart</li>
         </ul>
     </div>
@@ -31,8 +33,15 @@ const Header = () => (
     <div className="navbar">
         {logo()}
         {Links()}
+        <Status />
         {LoginLogout()}
     </div>
 )
+
+const Status = ()=>{
+    const online = useOnline();
+
+    return (online)?'🟢' :'🔴';
+};
 
 export default Header
