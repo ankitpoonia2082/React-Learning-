@@ -1,9 +1,9 @@
 const Shimmer = () => {
-    return (<div className="shimmer">
+    return (<div className="flex flex-wrap justify-center align-middle m-5">
         {
             Array(16).fill("")
                 .map((e, index) => (
-                    <div className="shimmerCard" key={index}></div>
+                    <div className="w-80 h-80  m-5 p-3 rounded-xl shadow-2xl bg-slate-300" key={index}></div>
                 ))
         }
     </div>)
@@ -17,7 +17,7 @@ export const NoRestro = () => {
 
 export const Offline = ()=>{
     return(
-        <h2>⭕️ You are Offline , Check your internet connection and try again...</h2>
+        <h2> ⚠️ You are Offline , Check your internet connection and try again...</h2>
     )
 }
 
