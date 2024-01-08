@@ -3,13 +3,14 @@ import { img_url_CDN } from "../contents";
 
 
 // Body Of App
-const RestaurantCard = ({ name, cloudinaryImageId, avgRating, costForTwo }) => {
-    return (<div className="w-80 h-96  m-5 p-3 rounded-xl shadow-2xl">
-        <img className="w-full h-3/5 rounded-xl" src={img_url_CDN + cloudinaryImageId}></img>
-        <div className="my-3">
-        <h1>{name}</h1>
-        <h2>{avgRating} stars</h2>
-        <h3>{costForTwo}</h3>
+const RestaurantCard = ({ name, cloudinaryImageId, avgRating, costForTwo ,isOpen }) => {
+    return (<div className="w-80 h-96 p-3 rounded-xl shadow-2xl ">
+    <img className="w-full h-3/5 rounded-xl mb-4" src={img_url_CDN + cloudinaryImageId}></img>
+        <div className="mt-3">
+        <h1 className="my-3 font-bold">{name}</h1>
+        <h2>{costForTwo}</h2>
+        <h2>Ratings :{avgRating} ⭐️</h2>
+        <h5>{(isOpen)?"OPEN":"CLOSE"}</h5>
         </div>
     </div>)
 };

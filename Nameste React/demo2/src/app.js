@@ -6,8 +6,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import RestroMenu from "./components/RestroMenu";
 import Error from './components/Error';
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 import Body from "./components/Body";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 
 const InstaMart = lazy(() => import('./components/InstaMart'));
 
@@ -27,6 +27,7 @@ const route = createBrowserRouter([
         element: <AppLayout />,
         errorElement: <Error />
         , children: [
+            // Nested Routing
             {
                 path: "/",
                 element: <Body />,
@@ -48,6 +49,7 @@ const route = createBrowserRouter([
                 errorElement: <Error />
             },
             {
+                // <Suspense> <- Used because of lazy loading
                 path: `/instaMart`,
                 element: <Suspense><InstaMart /></Suspense>,
                 errorElement: <Error />
@@ -57,6 +59,6 @@ const route = createBrowserRouter([
 
 ]);
 
-
+// Getting Root Element from HTML
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={route} />);
