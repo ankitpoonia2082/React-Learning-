@@ -1,16 +1,18 @@
 import RestaurantCard from "./card";
-import { useState, useEffect } from "react";
+import { useState, useEffect , useContext} from "react";
 import Shimmer, { NoRestro, Offline } from "./Shimmer";
 import { Link } from "react-router-dom";
 import { FilterData } from './utils/helper';
 import { get_Near_By_Restro } from '../contents';
 import useOnline from "./utils/useOnline";
-
+import UserContext from "./utils/userContext";
 
 // Application Body
 const Body = () => {
     const [filteredRestraut, setFilteredRestraut] = useState()
     const [allRestraut, setAllRestraut] = useState()
+
+    const {user,setNewUser} = useContext(UserContext);
 
     useEffect(() => {
         getSwigiData()
@@ -21,7 +23,7 @@ const Body = () => {
         try {
             const data = await fetch(get_Near_By_Restro);
             const json = await data.json();
-            const restaurant = await json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            const restaurant = await json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             setAllRestraut(restaurant);
             setFilteredRestraut(restaurant);
         }
@@ -29,7 +31,6 @@ const Body = () => {
             console.log("Failed to fetch", err)
         }
     };
-
 
     const [searchValue, setSearchValue] = useState("");
     const offline = useOnline()
@@ -51,12 +52,14 @@ const Body = () => {
                 }}>🔍</button>
             </div>
 
+            <input value={user.name} onChange={(e)=>{setNewUser({name:e.target.value})}}></input>
+
             {/* Displaying Cards */}
             {(!filteredRestraut) ? <Shimmer /> : (
                 <div className="flex flex-wrap justify-center align-middle box-border">
                     {
                         filteredRestraut.length === 0 ? <NoRestro /> : filteredRestraut.map(restrautList => {
-                            return (<Link className="m-5" to={`/restroMenu/` + restrautList.info.id} key={restrautList.info.id}><RestaurantCard {...restrautList.info} /></Link>)
+                            return (<Link className="m-5" to={`/restroMenu/` + restrautList.info.id} key={restrautList.info.id}><RestaurantCard {...restrautList.info}/></Link>)
                         })
                     }
                 </div>

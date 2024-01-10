@@ -1,9 +1,9 @@
 //______________________________RESTORANT CARD _______________________
 import { img_url_CDN } from "../contents";
 
-
 // Body Of App
 const RestaurantCard = ({ name, cloudinaryImageId, avgRating, costForTwo ,isOpen }) => {
+
     return (<div className="w-80 h-96 p-3 rounded-xl shadow-2xl ">
     <img className="w-full h-3/5 rounded-xl mb-4" src={img_url_CDN + cloudinaryImageId}></img>
         <div className="mt-3">

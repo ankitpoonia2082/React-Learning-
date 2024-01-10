@@ -2,13 +2,20 @@ import { useParams } from "react-router"
 import { img_url_CDN } from "../contents";
 import Shimmer from "./Shimmer";
 import useRestro from "./utils/useRestroDetail";
-
+import { addItem } from "./utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const RestroMenu = () => {
     // useParams() is a hook which give us dynamic url value
     let { id } = useParams()
 
     const [restroDetail,menu ]=  useRestro(id)
+
+    const dispatch = useDispatch()
+
+    const handelAddItem = (item) =>{
+        dispatch(addItem(item))
+    };
 
     return (!restroDetail && !menu) ? <Shimmer /> : (
         <div className="m-7">
@@ -28,11 +35,12 @@ const RestroMenu = () => {
                 <div className="flex flex-wrap justify-center">
                     {
                         menu?.map((item) => (
-                            <div className="border-2 w-80 text-center p-2 m-5">
+                            <div key={item.id} className="border-2 w-80 text-center p-2 m-5">
                                 <img className="w-full h-3/4" src={img_url_CDN + item.card?.info?.imageId}></img>
                                 <h4>{item.card?.info?.name}</h4>
                                 <p >{item.card?.info?.category}</p>
-                                <p >Price: ₹{item.card?.info?.price}</p>
+                                <p >Price: ₹{item.card?.info?.price/100}</p>
+                                <button onClick={()=>handelAddItem(item.card?.info)} className="bg-green-600 rounded-full px-2">+</button>
                             </div>
                         ))}
                 </div>
