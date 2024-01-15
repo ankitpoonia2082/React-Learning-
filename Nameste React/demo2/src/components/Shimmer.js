@@ -1,5 +1,5 @@
 const Shimmer = () => {
-    return (<div className="flex flex-wrap justify-center align-middle m-5">
+    return (<div data-testid = "Shimmer" className="flex flex-wrap justify-center align-middle m-5">
         {
             Array(16).fill("")
                 .map((e, index) => (

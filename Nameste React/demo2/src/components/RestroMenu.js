@@ -35,7 +35,7 @@ const RestroMenu = () => {
                 <div className="flex flex-wrap justify-center">
                     {
                         menu?.map((item) => (
-                            <div key={item.id} className="border-2 w-80 text-center p-2 m-5">
+                            <div className="border-2 w-80 text-center p-2 m-5">
                                 <img className="w-full h-3/4" src={img_url_CDN + item.card?.info?.imageId}></img>
                                 <h4>{item.card?.info?.name}</h4>
                                 <p >{item.card?.info?.category}</p>

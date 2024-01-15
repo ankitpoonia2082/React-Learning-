@@ -36,9 +36,9 @@ const Body = () => {
     const offline = useOnline()
 
     return (offline) ? (
-        <div className="App_body flex flex-col justify-center text-center">
+        <div className="flex flex-col justify-center text-center">
             <div className="place-self-center my-5 border-2 rounded-full p-1">
-                <input type="text"
+                <input data-testid="searchBox" type="text"
                     className="rounded-full self-center py-1 px-2 focus:bg-gray-200"
                     value={searchValue}
                     placeholder="Search"
@@ -46,7 +46,7 @@ const Body = () => {
                         setSearchValue(e.target.value)
                     }}
                 ></input>
-                <button className="bg-red-400 text-white py-1 rounded-full p-2 border hover:bg-red-500" onClick={() => {
+                <button data-testid= "searchBtn" className="bg-red-400 text-white py-1 rounded-full p-2 border hover:bg-red-500" onClick={() => {
                     const data = FilterData(searchValue, allRestraut)
                     setFilteredRestraut(data)
                 }}>🔍</button>
@@ -56,7 +56,7 @@ const Body = () => {
 
             {/* Displaying Cards */}
             {(!filteredRestraut) ? <Shimmer /> : (
-                <div className="flex flex-wrap justify-center align-middle box-border">
+                <div data-testid ="Restaurant" className="flex flex-wrap justify-center align-middle box-border">
                     {
                         filteredRestraut.length === 0 ? <NoRestro /> : filteredRestraut.map(restrautList => {
                             return (<Link className="m-5" to={`/restroMenu/` + restrautList.info.id} key={restrautList.info.id}><RestaurantCard {...restrautList.info}/></Link>)
